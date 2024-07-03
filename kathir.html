@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Application</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('kathir.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .quiz-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffd700;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .question label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .answer-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .answer-container div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .answer-container input[type="radio"],
+        .answer-container input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        select, input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .navigation button {
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 0 5px;
+        }
+
+        #prev-btn, #next-btn {
+            background-color: #ffd700;
+            color: #000;
+        }
+
+        #submit-btn {
+            background-color: #ff4500;
+            color: #fff;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #timer {
+            text-align: center;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #ffd700;
+        }
+
+        /* Button Hover Effects */
+        .navigation button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Quiz Application</h1>
+        <div id="timer">Time left: 3:00</div>
+        <form id="quiz-form">
+            <div id="questions-container"></div>
+            <div class="navigation">
+                <button type="button" id="prev-btn" class="hidden" onclick="prevPage()">Previous</button>
+                <button type="button" id="next-btn" onclick="nextPage()">Next</button>
+                <button type="submit" id="submit-btn" class="hidden">Submit</button>
+            </div>
+        </form>
+    </div>
+    <script src="quiz.js"></script>
+</body>
+</html>
